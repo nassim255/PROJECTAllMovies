@@ -268,13 +268,20 @@ body,html{
     padding: 30px 10px;
     justify-content: space-evenly;
 }
+.footer .part1 ul li .description p{
+    font-size: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+}
 .footer .part1 ul{
     margin-left: -70px;
 }
-.footer .part1 ul li pre {
+.footer .part1 ul li p {
     font-size: 20px;
 }
-.footer .part1 ul li pre a{
+.footer .part1 ul li p a{
     color: #baddeb;
 }
 .footer .part1 .descf {
@@ -286,10 +293,17 @@ body,html{
     flex-direction: row;
     gap: 35px;
 }
-.footer .part2 .titlef{
+.footer .part2 .column1 ul li a,.footer .part2 .column2 ul li a,.footer .part2 .column3 ul li a{
     color: #00A8E8;
+}
+.column1,.column2,.column3{
+    display: flex;
+    align-items: center;
+}
+.footer .part2 .column1 .titlef p,.footer .part2 .column2 .titlef p{
+    color: #FFFFFF;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 .copyright{
     width: auto;
@@ -417,10 +431,10 @@ body,html{
     font-weight: bold;
     font-size: 10px;
 }
-.footer .part1 ul li pre {
+.footer .part1 ul li p {
     font-size: 10px;
 }
-.footer .part1 ul li pre a{
+.footer .part1 ul li p a{
     color: #baddeb;
 }
 .footer .part1 .descf {
@@ -477,13 +491,12 @@ body,html{
     text-align: center;
     color: #FFC436;
 }
-
 }
 
 @media screen and (max-width: 600px) {
     .wrapper .carousel1 {
         grid-auto-columns: 100%;
-        gap: 30px;
+        gap: 5px;
     }
     .wrapper .carousel1 .card .img img{
         width: auto;
@@ -555,6 +568,9 @@ body,html{
     .footer .part1 ul {
     font-size: 10px;
     margin-left: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer .part1 .descf {
@@ -570,10 +586,10 @@ body,html{
     font-weight: bold;
     font-size: 15px;
 }
-.footer .part1 ul li pre {
+.footer .part1 ul li p {
     font-size: 15px;
 }
-.footer .part1 ul li pre a{
+.footer .part1 ul li p a{
     color: #baddeb;
 }
 .footer .part1 .descf {
@@ -582,14 +598,17 @@ body,html{
 }
 .footer .part2 {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    margin-left: -40px;
+    font-size: 13px;
+    text-align: center;
 }
-.footer .part2 .titlef{
+.footer .part2 .titlef p{
     color: #00A8E8;
     font-weight: bold;
-    font-size: 8px;
+    font-size: 15px;
+    text-align: center;
 }
 .carousel .carousel__item .img{
     height: 50px;
@@ -649,6 +668,13 @@ body,html{
 .navbar i:hover{
     background-color: #FFFFFF;
     padding: 10px 0px;
+}
+.footer .part1 ul li .description p{
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
 }
 
 }
