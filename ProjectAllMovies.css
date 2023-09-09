@@ -526,12 +526,13 @@ body,html{
     body{
         overflow-x: hidden;
     }
-    .navbar .input{
+    .navbar .search input{
         right: 90%;
+        width: 70px;
     }
     .navbar .profil{
         display: flex;
-        gap: 30px;
+        gap: 20px;
     }
     .navbar .list ul {
         position: absolute;
@@ -584,7 +585,7 @@ body,html{
         padding: 1px 13px;
     }
     .navbar .logo h1{
-        font-size: 25px;
+        font-size: 20px;
     }
     nav{
         margin-right: 0;
