@@ -83,12 +83,13 @@ body,html{
     text-align:start;
     border: #FFFFFF solid 3px;
 }
+
 .navbar i{
     font-size: 30px;
     transition: .3s ease-in-out;
     display: flex;
 }
-.navbar i:hover{
+.navbar  i:hover{
     background-color: #FFFFFF;
     padding: 18px 5px;
 }
@@ -534,12 +535,36 @@ body,html{
     }
     .navbar .list ul {
         position: absolute;
-        padding: 10px 15px;
-        top: -100%;
-        left: 75%;
+        font-size: 12px;
+        top: 5.5%;
+        width: 100px;
+        padding: 1px 2px;
+        left: -158%;
+        gap: 1px;
         transition: .5s ease-in-out;
         z-index: 1;
     }
+    .navbar .list ul li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .list ul li p{
+        font-size: 12px;
+        color: #00A8E8;
+        margin-top: 10px;
+        text-align: center;
+        display: block;
+        padding: 1px 13px;
+    }
+    .navbar .list .profil{
+        display: flex;
+        align-items: center;
+    }
+    .navbar .list .profil .menu i{
+        padding: 15px 8px;
+    }
+
 
     .navbar{
         width: 98%;
@@ -547,12 +572,16 @@ body,html{
 
     .navbar .list .show{
         display: block;
-        top:5%;
+        left: 75%;
+        width: 100px;
+        padding: 1px 2px;
+        gap: 1px;
+        font-size: 12px;
     }
 
     .navbar .list .profil {
         margin-right: 0;
-        padding: 18px;
+        padding: 1px 13px;
     }
     .navbar .logo h1{
         font-size: 25px;
