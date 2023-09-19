@@ -1,3 +1,4 @@
+
 // Function to scroll to the top of the page
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -5,7 +6,7 @@ function scrollToTop() {
 
 // Show/hide the button based on the user's scroll position
 window.addEventListener('scroll', () => {
-    const button = document.getElementById('scrollTopButton');
+    var button = document.getElementById('scrollTopButton');
     if (window.scrollY > 200) {
         button.style.display = 'block';
     } else {
@@ -23,8 +24,8 @@ list.classList.toggle('show')
 })
 
 document.querySelectorAll(".carousel").forEach((carousel) => {
-    const items = carousel.querySelectorAll(".carousel__item");
-    const buttonsHtml = Array.from(items, () => {
+    var items = carousel.querySelectorAll(".carousel__item");
+    var buttonsHtml = Array.from(items, () => {
     return `<span class="carousel__button"></span>`;
     });
     carousel.insertAdjacentHTML(
@@ -36,7 +37,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         `
         );
     
-        const buttons = carousel.querySelectorAll(".carousel__button");
+        var buttons = carousel.querySelectorAll(".carousel__button");
     
     buttons.forEach((button, i) => {
     button.addEventListener("click", () => {
@@ -61,8 +62,8 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     /*timer*/
 
     /*document.querySelectorAll(".carousel").forEach((carousel) => {
-        const items = carousel.querySelectorAll(".carousel__item");
-        const buttonsHtml = Array.from(items, () => {
+        var items = carousel.querySelectorAll(".carousel__item");
+        var buttonsHtml = Array.from(items, () => {
             return `<span class="carousel__button"></span>`;
         });
         carousel.insertAdjacentHTML(
@@ -74,9 +75,9 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
             `
         );
     
-        const buttons = carousel.querySelectorAll(".carousel__button");
+        var buttons = carousel.querySelectorAll(".carousel__button");
         let currentIndex = 0; // Track the current item index
-        const intervalDuration = 3000; // Set the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
+        var intervalDuration = 3000; // Set the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
     
         function showItem(index) {
             items.forEach((item) =>
@@ -96,7 +97,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         }
     
         // Automatically switch to the next item at the specified interval
-        const intervalId = setInterval(nextItem, intervalDuration);
+        var intervalId = setInterval(nextItem, intervalDuration);
     
         // Add event listeners to pause the auto-advance on button click
         buttons.forEach((button, i) => {
@@ -115,11 +116,11 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
 
     /* CAROUSEL1*/
-    const wrapper = document.querySelector(".wrapper");
-    const carousel1 = document.querySelector(".carousel1");
-    const firstCardWidth = carousel1.querySelector(".card").offsetWidth;
-    const arrowBtns = document.querySelectorAll(".wrapper i");
-    const carousel1Childrens = [...carousel1.children];
+    var wrapper = document.querySelector(".wrapper");
+    var carousel1 = document.querySelector(".carousel1");
+    var firstCardWidth = carousel1.querySelector(".card").offsetWidth;
+    var arrowBtns = document.querySelectorAll(".wrapper i");
+    var carousel1Childrens = [...carousel1.children];
     
     let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
     
@@ -148,7 +149,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         });
     });
     
-    const dragStart = (e) => {
+    var dragStart = (e) => {
         isDragging = true;
         carousel1.classList.add("dragging");
         // Records the initial cursor and scroll position of the carousel1
@@ -156,18 +157,18 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         startScrollLeft = carousel1.scrollLeft;
     }
     
-    const dragging = (e) => {
+    var dragging = (e) => {
         if(!isDragging) return; // if isDragging is false return from here
         // Updates the scroll position of the carousel1 based on the cursor movement
         carousel1.scrollLeft = startScrollLeft - (e.pageX - startX);
     }
     
-    const dragStop = () => {
+    var dragStop = () => {
         isDragging = false;
         carousel1.classList.remove("dragging");
     }
     
-    const infiniteScroll = () => {
+    var infiniteScroll = () => {
         // If the carousel1 is at the beginning, scroll to the end
         if(carousel1.scrollLeft === 0) {
             carousel1.classList.add("no-transition");
@@ -186,7 +187,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
         if(!wrapper.matches(":hover")) autoPlay();
     }
     
-    const autoPlay = () => {
+    var autoPlay = () => {
         if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
         // Autoplay the carousel1 after every 2500 ms
         timeoutId = setTimeout(() => carousel1.scrollLeft += firstCardWidth, 2500);
@@ -201,7 +202,43 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     wrapper.addEventListener("mouseleave", autoPlay);
     
     
+    // SWITCHER ENTRE DARK MODE AND LIGHT MODE
+    var switcher = document.querySelector(".lightmode");
+    var select = [
+    document.body,
+    document.querySelector('#scrollTopButton'),
+    document.querySelector(".navbar .logo h1"),
+    document.querySelector(".navbar .list ul li p"),
+    document.querySelector(".navbar input"),
+    document.querySelector(".navbar i"),
+    document.querySelector(".carousel .carousel__item .text"),
+    document.querySelector(".carousel .carousel__item .text ul li a p"),
+    document.querySelector(".carousel__button"),
+    document.querySelector(".title1"),
+    document.querySelector(".wrapper i"),
+    document.querySelector(".footer"),
+    document.querySelector(".footer .part1 ul li a h1"),
+    document.querySelector(".footer .part1 ul li p"),
+    document.querySelector(".footer .part2 .column1 ul li a"),
+    document.querySelector(".footer .part2 .column2 ul li a"),
+    document.querySelector(".footer .part2 .column3 ul li a"),
+    document.querySelector(".footer .part2 .column1 .titlef p"),
+    document.querySelector(".footer .part2 .column2 .titlef p"),
+    document.querySelector(".copyright p"),
+    document.querySelector(".creator")
+    ];
 
+    let changeIcon = function(icon)
+        {
+            icon.classList.toggle('fa-moon')
+        }
+    switcher.addEventListener('click',function()
+    {
+        for(let i = 0;i <= 20;i++){
+            console.log(i);
+            select[i].classList.toggle("lightmode");
+        }
+    })
 
 
     
