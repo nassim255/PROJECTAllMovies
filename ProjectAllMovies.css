@@ -570,7 +570,9 @@ body,html{
         display: flex;
     }
     /*NAVBAR*/
-    
+    .navbar{
+        justify-content: space-between;
+    }
     .navbar .menu{
         display:block;
     }
@@ -625,16 +627,19 @@ body,html{
     .navbar{
         width: 98%;
     }
-    .navbar  i:hover{
-        background-color:#FFFFFF;
+    .navbar .search i{
+        margin-right: -10px;
     }
     .navbar .search i:hover{
         background-color: #FFFFFF;
-        padding: 15px 8px;
+        padding: 10px 5px;
     }
-    .navbar .profil  i:hover{
+    .navbar .profil i:hover{
         background-color: #FFFFFF;
-        padding: 15px 8px;
+        padding: 10px 5px;
+    }
+    .navbar .profil .lightmode {
+        margin-left: -12px;
     }
 
     .navbar .list .show{
@@ -647,9 +652,7 @@ body,html{
         font-size: 12px;
         border-radius: 0px;
     }
-    .navbar .search i{
-        margin-right: -40px;
-    }
+    
     .navbar .search input{
         visibility: hidden;
         width: 0;
@@ -657,7 +660,6 @@ body,html{
 
     .navbar .list .profil {
         margin-right: 0;
-        padding: 1px 13px;
     }
     .navbar .logo h1{
         font-size: 20px;
