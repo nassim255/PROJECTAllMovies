@@ -230,13 +230,14 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
     let changeIcon = function(icon)
         {
-            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('bi-moon-fill');
         }
     switcher.addEventListener('click',function()
     {
         for(let i = 0;i <= 20;i++){
             console.log(i);
             select[i].classList.toggle("lightmode");
+            select[i].style.transition = '1s';
         }
     })
 
